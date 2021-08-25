@@ -6,7 +6,7 @@ function timestamped_log() {
   console.log(`${new Date()}:`, Array.prototype.slice.call(arguments).join(' '))
 }
 
-const hostname = 'localhost';
+const hostname = process.env.HOST || 'localhost';
 const port = process.env.PORT || 8088
 const html = fs.readFileSync('index.html', 'utf8')
 
