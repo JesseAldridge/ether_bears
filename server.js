@@ -7,7 +7,7 @@ function timestamped_log() {
 }
 
 const hostname = 'localhost';
-const port = (process.argv[2] ? parseInt(process.argv[2]) : 8088)
+const port = process.env.PORT || 8088
 const html = fs.readFileSync('index.html', 'utf8')
 
 const server = http.createServer((req, res) => {
